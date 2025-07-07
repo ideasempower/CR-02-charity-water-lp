@@ -1,47 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity: Water Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #003366;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .headline {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #e6f0fa;
+    }
+
+    .headline h2 {
+      font-size: 2.2rem;
+      color: #003366;
+    }
+
+    .headline p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #004080;
+    }
+
+    .image-block {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .subscribe {
+      text-align: center;
+      background: #fdd835;
+      padding: 3rem 1rem;
+    }
+
+    .subscribe h2 {
+      color: #003366;
+    }
+
+    .subscribe p {
+      color: #333333;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .subscribe input[type="email"] {
+      padding: 0.75rem;
+      width: 250px;
+      max-width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
+
+    .subscribe button {
+      padding: 0.75rem 1.2rem;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .subscribe button:hover {
+      background-color: #005fa3;
+    }
+
+    .donate {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .donate h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .donate p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .donate a.button {
+      background-color: #fdd835;
+      color: #003366;
+      padding: 0.9rem 1.6rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .donate a.button:hover {
+      background-color: #ffe74f;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #0077cc;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .cta a.button {
+      background-color: #fdd835;
+      color: #003366;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta a.button:hover {
+      background-color: #ffe74f;
+    }
+
+    .story {
+      padding: 3rem 1rem;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .story img {
+      flex: 1 1 300px;
+    }
+
+    .story-text {
+      flex: 1 1 400px;
+    }
+
+    .story h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+
+    .story p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .headline h2,
+      .donate h2,
+      .cta h2,
+      .story h2 {
+        font-size: 1.5rem;
+      }
+
+      .headline p,
+      .donate p,
+      .cta p,
+      .story p {
+        font-size: 1rem;
+      }
+
+      .story {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .subscribe form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .subscribe input[type="email"] {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <!-- Headline Section -->
+  <section class="headline">
+    <div class="container">
+      <h2>Clean Water is a Human Right</h2>
+      <p>Join our mission to bring clean, safe drinking water to every person on the planet.</p>
+    </div>
+  </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+  <!-- Image Section -->
+  <section class="image-block">
+    <div class="container">
+      <img src="https://via.placeholder.com/800x500" alt="Water project image" />
+    </div>
+  </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  <!-- Story Section -->
+  <section class="story">
+    <div class="container">
+      <img src="https://via.placeholder.com/500x400" alt="Smiling child with clean water" />
+      <div class="story-text">
+        <h2>This is Amina's Story</h2>
+        <p>Amina used to walk 4 hours every day just to collect water that wasn't safe to drink. After our clean water project reached her village, she now attends school full-time, and her health has improved dramatically. A simple well changed everything. Your donation makes stories like hers possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section class="subscribe">
+    <div class="container">
+      <h2>Stay Connected</h2>
+      <p>Sign up to hear stories from the field and get campaign updates.</p>
+      <form action="#" method="POST">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Donate Now Section -->
+  <section class="donate">
+    <div class="container">
+      <h2>Your Donation Makes a Difference</h2>
+      <p>100% of your donation goes directly to clean water projects around the world.</p>
+      <a href="#" class="button">Donate Now</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Be Part of the Change</h2>
+      <p>Every $40 brings clean water to one person. Start your impact today.</p>
+      <a href="#" class="button">Join the Movement</a>
+    </div>
+  </section>
+
 </body>
 </html>
